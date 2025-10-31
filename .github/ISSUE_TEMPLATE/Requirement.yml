@@ -1,0 +1,25 @@
+name: Requirement
+description: Report a requirement
+title: "[Requirement]: "
+labels: [req]
+body:
+  - type: input
+    id: summary
+    attributes:
+      label: Short summary
+      description: What's the main problem?
+      placeholder: e.g., Button not working on mobile
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: How can we see the issue?
+      placeholder: 1. Go to page ... 2. Click button ...
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - Low
+        - Medium
+        - High
