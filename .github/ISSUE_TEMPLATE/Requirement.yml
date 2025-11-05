@@ -1,25 +1,90 @@
-name: Requirement
-description: Report a requirement
-title: "[Requirement]: "
-labels: [req]
+name: "1.3 - [Iedereen] Requirement - Eis"
+description: "Voor: Alle teams | Doel: Requirement vastleggen"
+title: "[REQUIREMENT] "
+labels: ["requirement", "needs-review"]
+projects: ["Forta-nl/2"]
+assignees:
+  -
 body:
-  - type: input
-    id: summary
+  - type: markdown
     attributes:
-      label: Short summary
-      description: What's the main problem?
-      placeholder: e.g., Button not working on mobile
+      value: |
+        ## Requirement
+
+        Dit formulier wordt gebruikt voor **Requirements.
+
+  
+
+  - type: dropdown
+    id: requirement-type
+    attributes:
+      label: Type Requirement
+      description: Wat voor soort requirement is dit?
+      options:
+        - User
+        - AI/LLM requirement
+        - System
+        - Compliance
+      default: 0
+    validations:
+      required: true
+
   - type: textarea
-    id: steps
+    id: description
     attributes:
-      label: Steps to reproduce
-      description: How can we see the issue?
-      placeholder: 1. Go to page ... 2. Click button ...
+      label: Beschrijving Requirement
+      description: Beschrijf de voorgestelde requirement in detail
+      placeholder: Leg de context uit, beschrijf het probleem en de doelstellingen van deze requirement?
+    validations:
+      required: true
+
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Achterliggende gedachte
+      description: Waarom is deze requirement nodig?
+      placeholder: |
+        - Klinisch?
+        - Markt?
+        - Compliance requirement?
+        - Kwaliteit?
+        - Gebruiksgemak?
+    validations:
+      required: true
+
+
   - type: dropdown
     id: priority
     attributes:
-      label: Priority
+      label: Prioriteit
       options:
-        - Low
-        - Medium
-        - High
+        - "Must"
+        - "Should have"
+        - "Could have"
+      default: 2
+    validations:
+      required: true
+
+  - type: dropdown
+    id: source
+    attributes:
+      label: Bron
+      options:
+        - "Forta AI team"
+        - "Klankbordgroep"
+        - "Markt/Extern"
+        -  "Anders-Forta"
+      default: 2
+    validations:
+      required: true
+ 
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        **Na indienen:**
+        ✨ Dit issue genereert automatisch **5 sub-issues** die stap-voor-stap doorlopen worden.
+
+        Elk sub-issue heeft zijn eigen velden en verantwoordelijk team.
